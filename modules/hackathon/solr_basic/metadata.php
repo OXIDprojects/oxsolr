@@ -39,5 +39,20 @@ $aModule = array(
                         'type' => 'str',
                         'value' => ''
                 ),
+                array(
+                        'group' => 'SOLR_EXPORT',
+                        'name' => 'ONLY_ARTICLES',
+                        'type' => 'bool',
+                        'value' => '0'
+                ),
+                array(
+                        'group' => 'SOLR_EXPORT',
+                        'name' => 'ONLY_CATEGORIES',
+                        'type' => 'bool',
+                        'value' => '0'
+                ),
+                array( 'group' => 'SOLR_EXPORT',  'name' => 'ATRICLE_FIELDS_TO_EXPORT',      'type' => 'arr',  'value' => '' ),
+                array( 'group' => 'SOLR_EXPORT',  'name' => 'CATEGORY_FIELDS_TO_EXPORT',      'type' => 'arr',  'value' => '' ),
+                array( 'group' => 'SOLR_EXPORT',  'name' => 'STOPWORDS',      'type' => 'arr',  'value' => '' ),
         )
 );

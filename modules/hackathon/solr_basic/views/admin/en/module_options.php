@@ -14,5 +14,15 @@ $aLang = array(
         'SHOP_MODULE_PATH'=>   'Solr Path',
         'HELP_SHOP_MODULE_PATH'=>'Configure here the subpath eg. /solr/".',
 
+        'SHOP_MODULE_GROUP_SOLR_EXPORT'=>'Solr export settings',
+        'SHOP_MODULE_ONLY_ARTICLES'=>   'Only Artikel',
+        'HELP_SHOP_MODULE_ONLY_ARTICLES'=>'Choose this settings to export only categories',
+        'SHOP_MODULE_ONLY_CATEGORIES'=>   'Only Categories',
+        'HELP_SHOP_MODULE_ONLY_CATEGORIES'=>'Choose this settings to export only categories.".',
+        'SHOP_MODULE_ATRICLE_FIELDS_TO_EXPORT'=>'Article fields',
+        'HELP_SHOP_MODULE_ATRICLE_FIELDS_TO_EXPORT'=>'',
+        'SHOP_MODULE_CATEGORY_FIELDS_TO_EXPORT'=>'Category fields',
+        'HELP_SHOP_MODULE_CATEGORY_FIELDS_TO_EXPORT'=>'',
+        'SHOP_MODULE_STOPWORDS'=>'Words to be excluded from the search phrase'
 
 );
