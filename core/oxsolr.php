@@ -61,9 +61,9 @@ class oxsolr extends oxBase
      */
     public function pushToSolr()
     {
-        $oConfig = oxRegistry::getConfig();
-        $client  = new Solarium\Client($this->_solrConnection());
-        $update  = $client->createUpdate();
+        $oConfig   = oxRegistry::getConfig();
+        $client    = new Solarium\Client($this->_solrConnection());
+        $update    = $client->createUpdate();
 
         foreach ($this->_documentList as $docKey => $docValue)
         {
@@ -75,6 +75,8 @@ class oxsolr extends oxBase
 
                 continue;
             } //if
+
+            $document = $update->createDocument();
 
             // Update/Insert Document Article
             if ($oConfig->getShopConfVar('ONLY_ARTICLES', $oConfig->getShopId(), 'module:oxsolr') && $docValue->type == 'article')
@@ -96,13 +98,16 @@ class oxsolr extends oxBase
                     continue;
                 } //if
 
-                $document = $update->createDocument();
+                $configFields = $oConfig->getShopConfVar('ATRICLE_FIELDS_TO_EXPORT', $oConfig->getShopId(), 'module:oxsolr');
                 $document->id = $oArticle->getFieldData('oxid');
-                $document->title = $oArticle->getFieldData('oxtitle');
+
+                foreach ($configFields as $field)
+                {
+                    $document->{$field} = $oArticle->getFieldData($field);
+                } //foreach
             }
             else if ($oConfig->getShopConfVar('ONLY_CATEGORIES', $oConfig->getShopId(), 'module:oxsolr') && $docValue->type == 'category')
             {
-                $document = $update->createDocument();
 
             }
             else
