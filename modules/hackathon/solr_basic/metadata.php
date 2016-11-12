@@ -15,4 +15,6 @@ $aModule = array(
     'blocks' => array(
         // array('template' => 'page/list/list.tpl', 'block'=>'page_list_listhead', 'file'=> '/views/blocks/page_list_listhead.tpl'),
     ),
+    'settings'     => array(
+    )
 );
