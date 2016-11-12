@@ -8,6 +8,7 @@ $aModule = array(
         'version' => '1.0',
         'extend' => array(
                 'oxsearch' => 'hackathon/solr_basic/models/solr_oxsearch',
+                'article_main' => 'hackathon/solr_basic/admin/controllers/solr_basic_article_main',
         ),
         'files' => array(
                 'solr' => 'hackathon/solr_basic/core/solr.php',
