@@ -1,6 +1,6 @@
 <?php
 
-class OxSolr_Article_Main extends solr_basic_article_main_parent {
+class OxSolr_Article_Main extends OxSolr_Article_Main_parent {
     const OXARTICLES = 'oxarticles__';
 
     /**
@@ -12,23 +12,23 @@ class OxSolr_Article_Main extends solr_basic_article_main_parent {
         $aParams = $oConfig->getRequestParameter("editval");
         $oArticle = oxNew('oxArticle');
         $oArticle->load($sOxId);
-        $bNeedForExport =false;
+        $bNeedForExport = false;
 
         $oConfig = oxRegistry::get("oxConfig");
-        $aFieldsToExport=$oConfig->getConfigParam("ATRICLE_FIELDS_TO_EXPORT");
-        foreach ($aFieldsToExport as $sFieldName){
-            $sDbField= self::OXARTICLES . mb_strtolower($sFieldName);
+        $aFieldsToExport = $oConfig->getConfigParam("ATRICLE_FIELDS_TO_EXPORT");
+        if (count($aFieldsToExport) > 0) {
+            foreach ($aFieldsToExport as $sFieldName) {
+                $sDbField = self::OXARTICLES . mb_strtolower($sFieldName);
 
-            $sNewValue=$aParams[$sDbField];
-            $sOldValue=$oArticle->getFieldData($sFieldName);
-            $bNeedForExport= $sNewValue != $sOldValue;
-            if($bNeedForExport){
-                var_dump('export');
-                //TODO call solarium
-                return parent::save();
-            }
-            else{
-                var_dump('do not export');
+                $sNewValue = $aParams[$sDbField];
+                $sOldValue = $oArticle->getFieldData($sFieldName);
+                $bNeedForExport = $sNewValue != $sOldValue;
+                if ($bNeedForExport) {
+                    //TODO call solarium
+                    return parent::save();
+                } else {
+                    var_dump('do not export');
+                }
             }
         }
         parent::save();
