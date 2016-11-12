@@ -16,7 +16,7 @@ class ComposerStaticInitb32e5fe306edef0458f6c12e4d427d60
     public static $prefixDirsPsr4 = array (
         'Symfony\\Component\\EventDispatcher\\' => 
         array (
-            0 => __DIR__ . '/vendor',
+            0 => __DIR__ . '/..' . '/symfony/event-dispatcher',
         ),
     );
 
@@ -25,7 +25,7 @@ class ComposerStaticInitb32e5fe306edef0458f6c12e4d427d60
         array (
             'Solarium\\' => 
             array (
-                0 => __DIR__ . '/vendor',
+                0 => __DIR__ . '/..' . '/solarium/solarium/library',
             ),
         ),
     );
