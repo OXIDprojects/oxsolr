@@ -13,7 +13,6 @@
 /out
 /setup
 /tmp
-/vendor
 /.htaccess
 /bootstrap.php
 /composer.lock
