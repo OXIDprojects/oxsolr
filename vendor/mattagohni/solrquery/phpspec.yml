@@ -1,0 +1,18 @@
+suites:
+  default:
+    namespace: mattagohni\solrquery
+    psr4_prefix: mattagohni\solrquery
+    src_path: src/
+    spec_prefix: spec\
+    spec_path: .
+
+extensions:
+    PhpSpec\NyanFormattersExtension\Extension:
+    PhpSpecCodeCoverage\CodeCoverageExtension:
+        format:
+          - html
+          - clover
+        output:
+          html: coverage
+          clover: coverage/coverage.xml
+formatter.name: nyan.cat

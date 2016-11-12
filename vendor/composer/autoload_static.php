@@ -7,6 +7,10 @@ namespace Composer\Autoload;
 class ComposerStaticInitb32e5fe306edef0458f6c12e4d427d60
 {
     public static $prefixLengthsPsr4 = array (
+        'm' => 
+        array (
+            'mattagohni\\solrquery\\' => 21,
+        ),
         'S' => 
         array (
             'Symfony\\Component\\EventDispatcher\\' => 34,
@@ -14,6 +18,10 @@ class ComposerStaticInitb32e5fe306edef0458f6c12e4d427d60
     );
 
     public static $prefixDirsPsr4 = array (
+        'mattagohni\\solrquery\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/mattagohni/solrquery/src',
+        ),
         'Symfony\\Component\\EventDispatcher\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/event-dispatcher',
