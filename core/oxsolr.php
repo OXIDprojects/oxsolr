@@ -77,6 +77,7 @@ class oxsolr extends oxBase
             } //if
 
             $document = $update->createDocument();
+            $document->type = $docValue->type;
 
             // Update/Insert Document Article
             if ($oConfig->getShopConfVar('ONLY_ARTICLES', $oConfig->getShopId(), 'module:oxsolr') && $docValue->type == 'article')
