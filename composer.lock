@@ -1,0 +1,169 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "0acd833c28c9d784ca4f0b2260e10f0e",
+    "content-hash": "6defc27b1071f350910ff8ee7f1b9bda",
+    "packages": [
+        {
+            "name": "mattagohni/solrquery",
+            "version": "v0.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Mattagohni/solr-query.git",
+                "reference": "78e802a6d00abc42ad837477ccda2fed005de5a2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Mattagohni/solr-query/zipball/78e802a6d00abc42ad837477ccda2fed005de5a2",
+                "reference": "78e802a6d00abc42ad837477ccda2fed005de5a2",
+                "shasum": ""
+            },
+            "require": {
+                "solarium/solarium": "^3.0"
+            },
+            "require-dev": {
+                "ecomdev/phpspec-file-matcher": "dev-phpspec-3.0",
+                "henrikbjorn/phpspec-code-coverage": "^3.0",
+                "mikey179/vfsstream": "^1.6",
+                "phpspec/nyan-formatters": "^2.0",
+                "phpspec/phpspec": "^3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "mattagohni\\solrquery\\": "src/"
+                }
+            },
+            "support": {
+                "source": "https://github.com/Mattagohni/solr-query/tree/v0.0.1",
+                "issues": "https://github.com/Mattagohni/solr-query/issues"
+            },
+            "time": "2016-11-12 14:45:13"
+        },
+        {
+            "name": "solarium/solarium",
+            "version": "3.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/solariumphp/solarium.git",
+                "reference": "b945cbe4e8f96b639d82c4d1e2cae4ef3ab6fce5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/solariumphp/solarium/zipball/b945cbe4e8f96b639d82c4d1e2cae4ef3ab6fce5",
+                "reference": "b945cbe4e8f96b639d82c4d1e2cae4ef3ab6fce5",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2",
+                "symfony/event-dispatcher": "~2.3|~3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~3.7",
+                "satooshi/php-coveralls": "~1.0",
+                "squizlabs/php_codesniffer": "~1.4",
+                "zendframework/zendframework1": "~1.12"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "3.3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Solarium\\": "library/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "See GitHub contributors",
+                    "homepage": "https://github.com/basdenooijer/solarium/contributors"
+                }
+            ],
+            "description": "PHP Solr client",
+            "homepage": "http://www.solarium-project.org",
+            "keywords": [
+                "php",
+                "search",
+                "solr"
+            ],
+            "time": "2016-05-03 07:08:49"
+        },
+        {
+            "name": "symfony/event-dispatcher",
+            "version": "v3.1.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/event-dispatcher.git",
+                "reference": "28b0832b2553ffb80cabef6a7a812ff1e670c0bc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/28b0832b2553ffb80cabef6a7a812ff1e670c0bc",
+                "reference": "28b0832b2553ffb80cabef6a7a812ff1e670c0bc",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "psr/log": "~1.0",
+                "symfony/config": "~2.8|~3.0",
+                "symfony/dependency-injection": "~2.8|~3.0",
+                "symfony/expression-language": "~2.8|~3.0",
+                "symfony/stopwatch": "~2.8|~3.0"
+            },
+            "suggest": {
+                "symfony/dependency-injection": "",
+                "symfony/http-kernel": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\EventDispatcher\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony EventDispatcher Component",
+            "homepage": "https://symfony.com",
+            "time": "2016-10-13 06:28:43"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

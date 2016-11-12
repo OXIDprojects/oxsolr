@@ -116,5 +116,43 @@
             "search",
             "solr"
         ]
+    },
+    {
+        "name": "mattagohni/solrquery",
+        "version": "v0.0.1",
+        "version_normalized": "0.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Mattagohni/solr-query.git",
+            "reference": "78e802a6d00abc42ad837477ccda2fed005de5a2"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Mattagohni/solr-query/zipball/78e802a6d00abc42ad837477ccda2fed005de5a2",
+            "reference": "78e802a6d00abc42ad837477ccda2fed005de5a2",
+            "shasum": ""
+        },
+        "require": {
+            "solarium/solarium": "^3.0"
+        },
+        "require-dev": {
+            "ecomdev/phpspec-file-matcher": "dev-phpspec-3.0",
+            "henrikbjorn/phpspec-code-coverage": "^3.0",
+            "mikey179/vfsstream": "^1.6",
+            "phpspec/nyan-formatters": "^2.0",
+            "phpspec/phpspec": "^3.0"
+        },
+        "time": "2016-11-12 14:45:13",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "mattagohni\\solrquery\\": "src/"
+            }
+        },
+        "support": {
+            "source": "https://github.com/Mattagohni/solr-query/tree/v0.0.1",
+            "issues": "https://github.com/Mattagohni/solr-query/issues"
+        }
     }
 ]

@@ -1,5 +1,9 @@
 {
   "require": {
-    "solarium/solarium": "3.6.0"
-  }
+    "solarium/solarium": "3.6.0",
+    "mattagohni/solrquery": "v0.0.1"
+  },
+  "repositories": [
+    {"type": "vcs", "url": "https://github.com/Mattagohni/solr-query.git"}
+  ]
 }
