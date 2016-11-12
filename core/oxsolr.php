@@ -99,7 +99,7 @@ class oxsolr extends oxBase
                 } //if
 
                 $configFields = $oConfig->getShopConfVar('ATRICLE_FIELDS_TO_EXPORT', $oConfig->getShopId(), 'module:oxsolr');
-                $document->id = $oArticle->getFieldData('oxid');
+                $document->id = $oArticle->getId();
 
                 foreach ($configFields as $field)
                 {
@@ -108,7 +108,27 @@ class oxsolr extends oxBase
             }
             else if ($oConfig->getShopConfVar('ONLY_CATEGORIES', $oConfig->getShopId(), 'module:oxsolr') && $docValue->type == 'category')
             {
+                $oCategory = oxNew('oxCategory');
 
+                if ($oCategory->load($docValue->id))
+                {
+                    $update->addDeleteById($docValue->id);
+                    $update->addCommit();
+
+                    continue;
+                }
+                else
+                {
+                    continue;
+                } //if
+
+                $configFields = $oConfig->getShopConfVar('CATEGORY_FIELDS_TO_EXPORT', $oConfig->getShopId(), 'module:oxsolr');
+                $document->id = $oCategory->getId();
+
+                foreach ($configFields as $field)
+                {
+                    $document->{$field} = $oCategory->getFieldData($field);
+                } //foreach
             }
             else
             {
