@@ -1,14 +1,14 @@
 <?php
 
-$oMudle = oxNew('oxModule');
-$sPath = $oMudle->getModuleFullPath('solr_basic');
+$oModule = oxNew('oxModule');
+$sPath = $oModule->getModuleFullPath('oxsolr');
 
 if (file_exists($sPath.'/vendor/autoload.php'))
 {
     require_once($sPath.'/vendor/autoload.php');
 } //if
 
-class solr extends oxBase
+class oxsolr extends oxBase
 {
     protected $_documentList = array();
     protected $_availableTypes = array('article', 'category');
@@ -26,10 +26,10 @@ class solr extends oxBase
             'endpoint' => array(
                 'localhost' => array(
                     'schema'    => 'http',
-                    'core'      => $oConfig->getShopConfVar('CORE', $oConfig->getShopId(), 'module:solr_basic'),
-                    'host'      => $oConfig->getShopConfVar('HOST', $oConfig->getShopId(), 'module:solr_basic'),
-                    'port'      => $oConfig->getShopConfVar('PORT', $oConfig->getShopId(), 'module:solr_basic'),
-                    'path'      => $oConfig->getShopConfVar('PATH', $oConfig->getShopId(), 'module:solr_basic'),
+                    'core'      => $oConfig->getShopConfVar('CORE', $oConfig->getShopId(), 'module:oxsolr'),
+                    'host'      => $oConfig->getShopConfVar('HOST', $oConfig->getShopId(), 'module:oxsolr'),
+                    'port'      => $oConfig->getShopConfVar('PORT', $oConfig->getShopId(), 'module:oxsolr'),
+                    'path'      => $oConfig->getShopConfVar('PATH', $oConfig->getShopId(), 'module:oxsolr'),
                 )
             )
         );
@@ -47,10 +47,10 @@ class solr extends oxBase
     {
         if (in_array($type, $this->_availableTypes))
         {
-            $doc = new stdClass();
-            $doc->type      = $type;
-            $doc->id        =$oObjectId;
-            $doc->action    = $action;
+            $doc         = new stdClass();
+            $doc->type   = $type;
+            $doc->id     = $oObjectId;
+            $doc->action = $action;
 
             $this->_documentList[] = $doc;
         } //if
@@ -65,6 +65,8 @@ class solr extends oxBase
         $client = new Solarium\Client($this->_solrConnection());
         $update = $client->createUpdate();
 
+        var_dump('Hallo');
+
         foreach ($this->_documentList as $docKey => $docValue)
         {
             // Delete Object
@@ -77,7 +79,7 @@ class solr extends oxBase
             } //if
 
             // Update/Insert Article
-            if ($oConfig->getShopConfVar('ONLY_ARTICLES', $oConfig->getShopId(), 'module:solr_basic') && $docValue->type == 'article')
+            if ($oConfig->getShopConfVar('ONLY_ARTICLES', $oConfig->getShopId(), 'module:oxsolr') && $docValue->type == 'article')
             {
                 $oArticle = oxNew('oxArticle');
 
@@ -100,12 +102,12 @@ class solr extends oxBase
                 $document->id = $oArticle->getFieldData('oxid');
                 $document->title = $oArticle->getFieldData('oxtitle');
 
-                if ($oConfig->getShopConfVar('only_attribute', $oConfig->getShopId(), 'module:solr_basic'))
+                if ($oConfig->getShopConfVar('only_attribute', $oConfig->getShopId(), 'module:oxsolr'))
                 {
 
                 } //if
             }
-            else if ($oConfig->getShopConfVar('ONLY_CATEGORIES', $oConfig->getShopId(), 'module:solr_basic') && $docValue->type == 'category')
+            else if ($oConfig->getShopConfVar('ONLY_CATEGORIES', $oConfig->getShopId(), 'module:oxsolr') && $docValue->type == 'category')
             {
                 $document = $update->createDocument();
 
