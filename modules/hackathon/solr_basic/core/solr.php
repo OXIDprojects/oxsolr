@@ -77,7 +77,7 @@ class solr extends oxBase
             } //if
 
             // Update/Insert Article
-            if ($oConfig->getShopConfVar('only_article', $oConfig->getShopId(), 'module:solr_basic') && $docValue->type == 'article')
+            if ($oConfig->getShopConfVar('ONLY_ARTICLES', $oConfig->getShopId(), 'module:solr_basic') && $docValue->type == 'article')
             {
                 $oArticle = oxNew('oxArticle');
 
@@ -96,23 +96,16 @@ class solr extends oxBase
                     continue;
                 } //if
 
-                var_dump($oArticle->getFieldData('oxid'));
-
                 $document = $update->createDocument();
                 $document->id = $oArticle->getFieldData('oxid');
                 $document->title = $oArticle->getFieldData('oxtitle');
-
-                var_dump($oArticle->getFieldData('oxid'));
 
                 if ($oConfig->getShopConfVar('only_attribute', $oConfig->getShopId(), 'module:solr_basic'))
                 {
 
                 } //if
-
-                $update->addDocuments(array($document));
-                $update->addCommit();
             }
-            else if ($oConfig->getShopConfVar('only_category', $oConfig->getShopId(), 'module:solr_basic') && $docValue->type == 'category')
+            else if ($oConfig->getShopConfVar('ONLY_CATEGORIES', $oConfig->getShopId(), 'module:solr_basic') && $docValue->type == 'category')
             {
                 $document = $update->createDocument();
 
